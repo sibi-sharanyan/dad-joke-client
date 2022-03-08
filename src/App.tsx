@@ -29,7 +29,7 @@ export const App = () => {
       setJokes((prevJokes) => [data, ...prevJokes]);
     });
 
-    socket.on("update-sub-streams", (data) => {
+    socket.on("update-sub-streams", (data: { [key: string]: IClient[] }) => {
       console.log("update-sub-streams", data);
       setStreamListners(data);
     });
